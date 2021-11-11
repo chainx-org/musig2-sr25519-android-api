@@ -19,7 +19,7 @@ public class Musig2 {
 
     public static native String get_round1_msg(long jarg1);
 
-    public static native String get_round2_msg(long jarg1, String jarg2, String jarg3, String jarg4, String jarg5);
+    public static native String get_round2_msg(long jarg1, long jarg2, String jarg3, String jarg4, String jarg5);
 
     public static native String get_signature(String jarg1);
 
@@ -53,7 +53,7 @@ public class Musig2 {
         return get_round1_msg(round1State);
     };
 
-    public static String getRound2Msg(long round1State, String msg, String privkey, String[] pubkeys, String[] receivedRound1Msg){
+    public static String getRound2Msg(long round1State, long msg, String privkey, String[] pubkeys, String[] receivedRound1Msg){
         return get_round2_msg(round1State, msg, privkey, TextUtils.join("", pubkeys).toString(), TextUtils.join("", receivedRound1Msg).toString());
     };
 
